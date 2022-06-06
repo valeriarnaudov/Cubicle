@@ -3,8 +3,6 @@ const handlebars = require('express-handlebars');
 const routes = require('./routes');
 const app = express();
 
-// require('./routes')(app);
-
 app.use('/static', express.static('public'));
 
 app.engine('hbs', handlebars.engine({
