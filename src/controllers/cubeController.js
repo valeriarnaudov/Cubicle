@@ -15,18 +15,17 @@ router.post("/create", async (req, res) => {
 
     //Save Data
     try {
-        await cubeService.save(cube)
+        await cubeService.save(cube);
         res.redirect("/");
     } catch (error) {
         res.status(400).send(error);
     }
-
 });
 
-router.get('/details/:id', (req, res) => {
+router.get("/details/:id", (req, res) => {
     const cube = cubeService.getOne(req.params.id);
 
-    res.render('details', {cube});
-})
+    res.render("details", { cube });
+});
 
 module.exports = router;
